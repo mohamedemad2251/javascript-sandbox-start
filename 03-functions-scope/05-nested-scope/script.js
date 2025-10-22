@@ -1,0 +1,1 @@
+// Same stuff you know. Simply put, a child scope can inherit/use all variables and values in the parent scope of it. (But not the other way around).
