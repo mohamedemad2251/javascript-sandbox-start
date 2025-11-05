@@ -37,5 +37,31 @@ const people = [
   },
 ];
 
+// Solution:
+const youngPeople = people
+  .filter((person) => person.age <= 25)
+  .map((youngPerson) => ({
+    name: `${youngPerson.firstName} ${youngPerson.lastName}`,
+    email: youngPerson.email,
+  }));
+
+console.log(youngPeople);
+
 // Challenge 2
 const numbers = [2, -30, 50, 20, -12, -9, 7];
+
+// Solution:
+const positiveSum = numbers
+  .filter((number) => number >= 0)
+  .reduce((acc, curr) => acc + curr);
+
+console.log(positiveSum);
+
+// Challenge 3:
+const words = ['coder', 'programmer', 'developer'];
+
+// Solution:
+// NOTE: There is no splice, so I uppercased the first letter THEN concatenated on that with the rest of the string via word.slice(1) which just slices the first letter off.
+const capitalizeWords = words.map((word) => word[0].toUpperCase() + word.slice(1));
+
+console.log(capitalizeWords);
