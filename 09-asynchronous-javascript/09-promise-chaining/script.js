@@ -10,8 +10,13 @@ const promise = new Promise((resolve, reject) => {
   }, 1000);
 });
 
+// We can chain promises if we have a sequence of asynchronous operations. Example:
 promise
   .then((user) => {
     console.log(user);
+    // If you would return something from this promise's "then", you can use it in the chain "then" (so like promise of promise)
+    return user.name;
   })
-  .catch((error) => console.log(error))
+  // Here we use the user.name that was returned into the second promise
+  .then((userName) => console.log(userName))
+  .catch((error) => console.log(error));
